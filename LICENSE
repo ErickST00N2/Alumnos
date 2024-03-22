@@ -1,0 +1,48 @@
+CONTRATO DE LICENCIA DE USO DE SOFTWARE
+Sistema de credenciales QR
+
+PARTES INVOLUCRADAS:
+Este contrato de licencia de software ("Contrato") se celebra entre Erick Gonzalez Cortes, en adelante denominado el "Licenciante", y el Centro de Bachillerato Tecnológico Industrial y de Servicios Número 61 (CBTis 61), en adelante denominado el "Plantel Educativo".
+
+DURACIÓN DEL CONTRATO:
+El presente contrato tendrá una duración de 3 años a partir de la fecha de firma.
+
+OBJETO DEL CONTRATO:
+El objeto del presente contrato es la concesión de una licencia de uso exclusivo del software desarrollado por el Licenciante para el Centro de Bachillerato Tecnologico Industrial y de Servicios Número 61 (CBTis61).
+
+LICENCIAMIENTO DE SOFTWARE:
+El Licenciante, Erick González Cortes, es el propietario de los derechos patrimoniales del software y concede al Plantel Educativo una licencia limitada para utilizar y modificar el software únicamente dentro de las instalaciones del Centro de Bachillerato Tecnologico Industrial y de Servicios Número 61 (CBTis 61). Esta licencia no otorga al Plantel Educativo ningún derecho de distribución o comercialización del software, ni la capacidad de copiar las funciones y características del mismo. Además, el Plantel Educativo se compromete a no utilizar partes del código fuente para crear otro software o distribuirlo a otros planteles sin el consentimiento explícito del Licenciante.
+
+Usuarios del Software:
+Los usuarios del software se clasifican en tres categorías:
+- Alumnos: Son los usuarios que acceden a la aplicación Mi credencial Digital del Sistema de credenciales QR utilizando una combinación de correo electrónico y contraseña, así como credenciales QR. La cantidad máxima de usuarios creados y que pueden utilizar el sistema simultáneamente está determinada por la documentación del software.
+
+- Administrador: Es el usuario designado para el registro, eliminación y actualización de usuarios.
+
+- Maestros: Son los usuarios encargados de reportar a los Alumnos de cualquier tipo de incidencia cometida dentro del plantel según el contexto establecido dentro de la aplicación, realizar el pase de lista y otras funciones relacionadas con la gestión educativa.
+
+BASE DE DATOS:
+El software utiliza una base de datos alojada en el motor de base de datos Firebase. Esta base de datos es el repositorio de todos los datos del software para un ambiente específico e independiente.
+
+GARANTÍA:
+La garantía del software será válida bajo las siguientes condiciones:
+- No se ha modificado el código fuente del software por parte del plantel educativo antes de que transcurran los primeros 3 meses desde la instalación.
+- Ningún miembro del plantel ha intervenido en el motor de base de datos.
+- No se ha hecho un mal uso del software.
+- Se han seguido correctamente los manuales técnicos y de usuario proporcionados.
+La garantía será válida durante los primeros 3 meses después de la instalación. Posteriormente, cualquier soporte técnico requerido estará sujeto a un cargo adicional. Cualquier modificación del código fuente realizada por el plantel educativo antes de que transcurra el periodo de garantía de 3 meses resultará en la cancelación de la garantía, y cualquier soporte técnico necesario estará sujeto a un cargo adicional.
+
+SOPORTE TÉCNICO EXCLUSIVO:
+El Licenciante, Erick González Cortes, será el único proveedor de soporte técnico para el software. Ninguna otra entidad tendrá autorización para brindar servicios de soporte técnico relacionados con el software sin el consentimiento expreso del Licenciante. El Plantel Educativo acepta que cualquier necesidad de soporte técnico adicional estará sujeta a un cargo adicional.
+
+MODIFICACIÓN DEL SOFTWARE:
+El Plantel Educativo tendrá permiso para modificar el código fuente del software únicamente con el propósito de adaptarlo a sus necesidades específicas del plantel o para realizar cambios de diseño. Cualquier modificación del código fuente debe ser previamente autorizada por el Licenciante. El Licenciante se reserva el derecho de revisar y aprobar cualquier modificación propuesta antes de su implementación.
+
+RESPONSABILIDAD DEL LICENCIANTE COMO SOPORTE TÉCNICO:
+En caso de que el Plantel Educativo modifique el código fuente del software y dicha modificación resulte en errores que causen la caída del sistema o problemas de funcionamiento, el Licenciante tendrá la responsabilidad de proporcionar el soporte técnico necesario para solucionar estos problemas. El Plantel Educativo estará obligado a llamar al Licenciante para solicitar asistencia técnica adicional en tales casos, y cualquier servicio de soporte técnico proporcionado estará sujeto a un cargo adicional.
+
+CONSENTIMIENTO DEL LICENCIANTE PARA NUEVAS CARACTERÍSTICAS:
+Cualquier solicitud para agregar nuevas características o funcionalidades al software debe ser presentada al Licenciante para su revisión y aprobación. El Licenciante se reserva el derecho de aceptar o rechazar tales solicitudes según su criterio.
+
+MANUALES DEL SOFTWARE
+El plantel educativo recibirá un manual de usuario y un manual técnico detallado para el manejo del software de acuerdo con las especificaciones determinadas.
