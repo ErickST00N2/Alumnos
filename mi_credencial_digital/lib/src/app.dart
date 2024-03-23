@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           showSemanticsDebugger: false,
           title: nameApp,
           theme: ThemeData(
+            primarySwatch: Colors.blue,
             brightness: Brightness.light,
             primaryColor: Color(cAplication.medio),
             primaryColorLight: Color(cAplication.bajo),

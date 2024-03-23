@@ -1,10 +1,16 @@
 import 'dart:async';
 
+import 'dart:io';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
 import 'package:mi_credencial_digital/src/providers/user.dart';
 import 'package:mi_credencial_digital/src/util/colors_aplication/colores.dart';
-import 'package:mi_credencial_digital/src/widgets/credential/credential_users.dart';
+import 'package:mi_credencial_digital/src/widgets/credential/camera_credential.dart';
+import 'package:mi_credencial_digital/src/widgets/credential/credential_back.dart';
+import 'package:mi_credencial_digital/src/widgets/credential/credential_front.dart';
+import 'package:mi_credencial_digital/src/widgets/credential/send_image_picker.dart';
 import 'package:mi_credencial_digital/src/widgets/menu/menu.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +23,8 @@ class MyCredentialPage extends StatefulWidget {
 
 class _MyCredentialPageState extends State<MyCredentialPage> {
   ColoresApp cAplication = ColoresApp();
+  String result = '';
+
   Users? _user;
   Timer? _timer;
   bool _hasError = false;
@@ -34,8 +42,15 @@ class _MyCredentialPageState extends State<MyCredentialPage> {
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator.adaptive())
-          : buildDataContent(
-              context, _user!, _controllerGestureFlipCardCredential),
+          : SingleChildScrollView(
+              //padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  buildDataContent(
+                      context, _user!, _controllerGestureFlipCardCredential),
+                ],
+              ),
+            ),
     );
   }
 
@@ -43,6 +58,7 @@ class _MyCredentialPageState extends State<MyCredentialPage> {
   void dispose() {
     _timer?.cancel(); // Cancela el timer cuando el widget se desecha
     super.dispose();
+    loadStudentData(context);
   }
 
   @override
@@ -68,5 +84,63 @@ class _MyCredentialPageState extends State<MyCredentialPage> {
     setState(() {
       _isLoading = false;
     });
+  }
+
+  Widget buildDataContent(BuildContext context, databaseUser,
+      GestureFlipCardController controllerGestureFlipCardCredential) {
+    const double pi = math.pi;
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Center(
+            child: GestureFlipCard(
+              controller: controllerGestureFlipCardCredential,
+              axis: FlipAxis.vertical,
+              enableController: true,
+              animationDuration: const Duration(milliseconds: 1800),
+              frontWidget: buildCardFront(context, databaseUser, pi),
+              backWidget: buildCardBack(context, databaseUser, pi),
+            ),
+          ),
+          const SizedBox(height: 15),
+          Row(
+            children: [
+              const Expanded(
+                flex: 1,
+                child: SizedBox(width: 20),
+              ),
+              Expanded(
+                flex: 3,
+                child: TextButton.icon(
+                  icon: const Icon(Icons.flip_to_back),
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      elevation: 2,
+                      minimumSize: const Size(120, 50)),
+                  label: const Text('Voltear Credencial'),
+                  onPressed: () {
+                    // Flip the card programmatically
+
+                    controllerGestureFlipCardCredential.flipcard();
+                  },
+                ),
+              ),
+              Expanded(flex: 3, child: CameraCredential()),
+              const Expanded(
+                flex: 1,
+                child: SizedBox(width: 20),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          SendImagePicker(),
+        ],
+      ),
+    );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -142,8 +144,17 @@ class Users with ChangeNotifier {
 
   String get photoURL => _photoURL;
 
+  //[String value] - [photoURL]
   set photoURL(String value) {
     _photoURL = value;
+    notifyListeners();
+  }
+
+  Future setPhotoURL(String url, File file) async {
+    Reference ref = FirebaseStorage.instance.ref(url);
+
+    ref.putFile(file);
+    photoURL = url;
     notifyListeners();
   }
 
@@ -295,11 +306,6 @@ class Users with ChangeNotifier {
 
     //nivelEducativo = userData['nivelEducativo'];
 
-    notifyListeners();
-  }
-
-  void setPhotoURL(String url) {
-    photoURL = url;
     notifyListeners();
   }
 }
