@@ -26,11 +26,11 @@ class CameraCredential extends StatelessWidget {
 
   Future<void> onSubmitCameraPhoto(BuildContext context) async {
     //TODO: implement onPressed para tomar la foto en el cual cambiará la foto
-    final XFile? _image = await _picker.pickImage(source: ImageSource.camera);
+    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
 
-    if (_image == null) return;
+    if (image == null) return;
 
-    File file = File(_image!.path);
+    File file = File(image.path);
     // Define el nuevo nombre del archivo
     String newFileName = 'fotoP.jpg';
     // Obtiene el directorio temporal del dispositivo

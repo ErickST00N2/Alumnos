@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_credencial_digital/src/util/colors_aplication/colores.dart';
 import 'package:mi_credencial_digital/src/router/routes.dart';
@@ -9,18 +10,29 @@ class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
   @override
   Widget build(BuildContext context) {
-    return Drawer(elevation: 2, child: _buildDrawerContent(context));
+    return Drawer(
+        width: MediaQuery.of(context).size.width * 0.75,
+        elevation: 2,
+        child: _buildDrawerContent(context));
   }
 
   Widget _buildDrawerContent(BuildContext _) {
     return SingleChildScrollView(
       child: Column(children: <Widget>[
         UserAccountsDrawerHeader(
+          margin: EdgeInsets.zero,
           decoration: BoxDecoration(
             color: Color(ColoresApp.fuerte3),
           ),
-          accountName: Text(_.watch<Users>().nombre),
-          accountEmail: Text(_.watch<Users>().correo),
+          accountName: AutoSizeText(
+            _.watch<Users>().nombre,
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold),
+            maxLines: 2,
+            minFontSize: 5,
+            maxFontSize: 13,
+          ),
+          accountEmail: AutoSizeText(_.watch<Users>().correo),
           currentAccountPicture: CircleAvatar(
             backgroundImage: _.watch<Users>().getPhotoURL(),
           ),

@@ -46,6 +46,8 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.light(),
               buttonColor: Colors.white,
             ),
+            primaryTextTheme:
+                const TextTheme(bodyLarge: TextStyle(color: Colors.black)),
             textButtonTheme: TextButtonThemeData(
               style: TextButton.styleFrom(
                 textStyle: const TextStyle(color: Colors.white),

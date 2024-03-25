@@ -82,6 +82,15 @@ flutter:
     - assets/svg/logocbtis.svg
     - assets/backgrounds/credential/logoDGTI.png
     - assets/webp/blank-profile-picture-973460_960_720.webp
+    - assets/svg/credencialesqr_imagotipo_blanco.png
+    - assets/svg/credencialesqr_imagotipo_azul.png
+    - assets/svg/credencialesqr_isotipo_blanco.png
+    - assets/svg/credencialesqr_isotipo_azul.png
+
+
+
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

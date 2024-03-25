@@ -35,8 +35,8 @@ class Routes {
   }
 
   static final routes = {
-    '/': (context) => const HomePage(),
-    '/about': (context) => const AboutPage(),
+    '/': (context) => HomePage(),
+    '/about': (context) => AboutPage(),
     '/login': (context) => const Login(),
     '/tutorial': (context) => const TutorialPage(),
     '/welcome': (context) => const Welcom(),
@@ -54,10 +54,10 @@ class Routes {
     debugPrint('La ruta de generateRoute es: ${settings.name}');
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) => HomePage());
 
       case '/about':
-        return MaterialPageRoute(builder: (_) => const AboutPage());
+        return MaterialPageRoute(builder: (_) => AboutPage());
 
       case '/view_incidents':
         return _checkAuthAndNavigate(

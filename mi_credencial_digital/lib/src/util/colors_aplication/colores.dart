@@ -20,6 +20,14 @@ class ColoresApp {
 
   static int fuerte3 = 0xFF069BDF;
 
+  final Color colorAppBars =
+      const Color.fromRGBO(0, 193, 213, 0.3); //Color(fuerte3);
+
+  final Color colorAppBars2 =
+      const Color.fromRGBO(0, 193, 213, 1); //Color(fuerte3);
+
+  final Color colorAppBars3 = const Color(0xff003a40); //Color(fuerte3);
+
   final Color colorAppBar = Color(fuerte3);
 
   /// [fuerteMedio] - Color de Medio - fuerte de la aplicación.

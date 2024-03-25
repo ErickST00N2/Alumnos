@@ -7,7 +7,7 @@ Widget buildCardFront(BuildContext context, databaseUser, double pi) {
 
   /// [size] - Es el tamaño de la pantalla que se obtiene del dispositivo.
   final size = MediaQuery.of(context).size;
-  GlobalKey _keyTamanioCard = GlobalKey();
+  GlobalKey keyTamanioCard = GlobalKey();
 
   /// [maxWidthScreenCard] - Evaluamos la anchura de la pantalla para saber si
   /// nuestra credencial tendrá un ancho maximo de 700 pixeles o si sigue con
@@ -22,7 +22,7 @@ Widget buildCardFront(BuildContext context, databaseUser, double pi) {
   final relacionCredentialCardAspecto8 =
       relacionCredentialCardAspecto12 / 12 * 8; // Equivale a 8
   return Card(
-    key: _keyTamanioCard,
+    key: keyTamanioCard,
     //color: cAplication.colorDeFondoCredenciales,
     elevation: 6,
     semanticContainer: true,
@@ -98,85 +98,86 @@ Widget buildCardFront(BuildContext context, databaseUser, double pi) {
                       ),
                       Expanded(
                         flex: 6,
-                        child: Flex(
-                          direction: Axis.vertical,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: <Widget>[
-                            Expanded(
-                              flex: 5,
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Flex(
-                                  direction: Axis.vertical,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    const SizedBox(
-                                      height: 5,
-                                    ),
-                                    const Text(
-                                      "CENTRO DE BACHILLERATO TECNÓLOGICO INDUSTRIAL Y DE SERVICIOS No 61",
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        height: 1.2,
-                                        fontWeight: FontWeight.bold,
+                        child: SizedBox(
+                          width: double.maxFinite,
+                          height: double.maxFinite,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 5,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
+                                  child: Flex(
+                                    direction: Axis.vertical,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    children: [
+                                      const SizedBox(
+                                        height: 5,
                                       ),
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                    const SizedBox(height: 10),
-                                    const Text(
-                                      "ALUMNO:",
-                                      style: TextStyle(
-                                          fontSize: 10,
+                                      const Text(
+                                        "CENTRO DE BACHILLERATO TECNÓLOGICO INDUSTRIAL Y DE SERVICIOS No 61",
+                                        style: TextStyle(
+                                          fontSize: 11,
                                           height: 1.2,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      "${databaseUser.nombre}",
-                                      style: const TextStyle(
-                                          fontSize: 12, height: 1.2),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    const Text(
-                                      "CURP:",
-                                      style: TextStyle(
-                                          fontSize: 10,
-                                          height: 1.2,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      "${databaseUser.curp}",
-                                      style: const TextStyle(
-                                          fontSize: 12, height: 1.2),
-                                    ),
-                                  ],
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        textAlign: TextAlign.justify,
+                                      ),
+                                      const SizedBox(height: 10),
+                                      const Text(
+                                        "ALUMNO:",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            height: 1.2,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        "${databaseUser.nombre}",
+                                        style: const TextStyle(
+                                            fontSize: 12, height: 1.2),
+                                      ),
+                                      const SizedBox(height: 10),
+                                      const Text(
+                                        "CURP:",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            height: 1.2,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        "${databaseUser.curp}",
+                                        style: const TextStyle(
+                                            fontSize: 12, height: 1.2),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            const Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Flex(
-                                  direction: Axis.horizontal,
-                                  children: [
-                                    Text(
-                                      //TODO: AQUÍ VA EL NOMBRE DE LA DIRECTORA, FALTA AÑADIR LA FIRMA.
-                                      "ING. MAIRA NAYANI HERNANDEZ JIMÉNEZ\nDIRECTORA",
-                                      style: TextStyle(
-                                          fontSize: 8,
-                                          height: 1.2,
-                                          fontWeight: FontWeight.bold),
-                                      textAlign: TextAlign.right,
-                                    ),
-                                  ],
+                              const Expanded(
+                                flex: 1,
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 8.0),
+                                  child: AutoSizeText(
+                                    //TODO: AQUÍ VA EL NOMBRE DE LA DIRECTORA, FALTA AÑADIR LA FIRMA.
+                                    "ING. MAIRA NAYANI HERNANDEZ JIMÉNEZ\nDIRECTORA",
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.right,
+                                    maxLines: 2,
+                                    minFontSize: 5,
+                                    maxFontSize: 15,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       )
                     ],

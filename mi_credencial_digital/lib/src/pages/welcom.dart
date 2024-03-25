@@ -128,7 +128,7 @@ class _WelcomState extends State<Welcom> {
                   return const Login(); // Muestra la pantalla de inicio de sesión
                 case AuthStatus.Authenticated:
                   print(authService.status);
-                  return const HomePage();
+                  return HomePage();
                 //case AuthStatus.Authenticating:
                 //print(authService.status);
                 //return const CircularProgressIndicator(); // O algún otro widget de carga

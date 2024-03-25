@@ -219,9 +219,8 @@ class Users with ChangeNotifier {
     } catch (error) {
       // Maneja cualquier error que pueda ocurrir durante el proceso
       debugPrint('Error al obtener la URL de descarga: $error');
-      // Lanza una excepción con un mensaje descriptivo
-      return throw Exception(
-          "Error al obtener la URL de descarga del archivo $filePath: $error");
+      // Devuelve null en caso de error
+      return 'assets/webp/blank-profile-picture-973460_960_720.webp';
     }
   }
 
@@ -304,8 +303,7 @@ class Users with ChangeNotifier {
     semestre = userData['Semestre'];
     grupo = userData['Grupo'];
 
-    //nivelEducativo = userData['nivelEducativo'];
-
+    // Verifica si photoURL es null antes de notificar a los listeners
     notifyListeners();
-  }
+    }
 }

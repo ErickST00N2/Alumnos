@@ -8,7 +8,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:provider/provider.dart';
 
 class SendImagePicker extends StatelessWidget {
-  SendImagePicker({Key? key}) : super(key: key);
+  SendImagePicker({super.key});
 
   final ImagePicker _picker = ImagePicker();
 
@@ -27,11 +27,11 @@ class SendImagePicker extends StatelessWidget {
   }
 
   Future<void> onSubmitGalleryPhoto(BuildContext context) async {
-    final XFile? _image = await _picker.pickImage(source: ImageSource.gallery);
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
 
-    if (_image == null) return;
+    if (image == null) return;
 
-    File file = File(_image!.path);
+    File file = File(image.path);
     // Define el nuevo nombre del archivo
     String newFileName = 'fotoP.jpg';
     // Obtiene el directorio temporal del dispositivo

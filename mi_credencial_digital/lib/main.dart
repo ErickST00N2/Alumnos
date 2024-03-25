@@ -8,7 +8,6 @@ import 'firebase_options.dart';
 @override
 
 ///@ErickST00N
-
 ///[main] En la función principal estamos inicializando a firebase
 ///para poder conectar a la base de datos de la API
 ///Sistema de Reportes e incidencias

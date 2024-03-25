@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:mi_credencial_digital/src/widgets/credential/credential_back.dar
 import 'package:mi_credencial_digital/src/widgets/credential/credential_front.dart';
 import 'package:mi_credencial_digital/src/widgets/credential/send_image_picker.dart';
 import 'package:mi_credencial_digital/src/widgets/menu/menu.dart';
+import 'package:mi_credencial_digital/src/widgets/pie_pagina/pie_pagina.dart';
 import 'package:provider/provider.dart';
 
 class MyCredentialPage extends StatefulWidget {
@@ -38,17 +38,24 @@ class _MyCredentialPageState extends State<MyCredentialPage> {
     return Scaffold(
       drawer: const MenuDrawer(),
       appBar: AppBar(
+        backgroundColor: cAplication.colorDelAppBar,
         title: const Text('Credencial Digital'),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator.adaptive())
           : SingleChildScrollView(
               //padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  buildDataContent(
-                      context, _user!, _controllerGestureFlipCardCredential),
-                ],
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    buildDataContent(
+                        context, _user!, _controllerGestureFlipCardCredential),
+                    const PiePagina()
+                  ],
+                ),
               ),
             ),
     );

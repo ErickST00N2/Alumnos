@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import 'package:qr_flutter/qr_flutter.dart';
@@ -78,21 +79,25 @@ Widget buildCardBack(BuildContext context, databaseUser, double pi) {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         direction: Axis.vertical,
                         children: [
-                          Text(
+                          AutoSizeText(
                             typeSystem,
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontSize: 12,
                             ),
+                            maxLines: 1,
+                            minFontSize: 2,
                           ),
-                          Text(
+                          AutoSizeText(
                             turn,
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.normal,
-                              fontSize: 16,
+                              fontSize: 12,
                             ),
+                            maxLines: 1,
+                            minFontSize: 2,
                           )
                         ],
                       ),
@@ -114,21 +119,25 @@ Widget buildCardBack(BuildContext context, databaseUser, double pi) {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 direction: Axis.vertical,
                                 children: [
-                                  const Text(
+                                  const AutoSizeText(
                                     "FECHA DE EMISION",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 8,
                                     ),
+                                    maxLines: 1,
+                                    minFontSize: 5,
                                   ),
-                                  Text(
+                                  AutoSizeText(
                                     dateEmition,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.normal,
-                                      fontSize: 8,
+                                      fontSize: 7,
                                     ),
+                                    maxLines: 1,
+                                    minFontSize: 4,
                                   ),
                                 ]),
                           ),
@@ -141,21 +150,25 @@ Widget buildCardBack(BuildContext context, databaseUser, double pi) {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 direction: Axis.vertical,
                                 children: [
-                                  const Text(
+                                  const AutoSizeText(
                                     "CICLO ESCOLAR",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 8,
                                     ),
+                                    maxLines: 1,
+                                    minFontSize: 5,
                                   ),
-                                  Text(
+                                  AutoSizeText(
                                     schoolCycle,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.normal,
-                                      fontSize: 8,
+                                      fontSize: 7,
                                     ),
+                                    maxLines: 1,
+                                    minFontSize: 2,
                                   ),
                                 ]),
                           ),
@@ -264,14 +277,18 @@ Widget buildCardBack(BuildContext context, databaseUser, double pi) {
                   ),
                 ),
               ),
-              child: const Flex(direction: Axis.vertical, children: <Text>[
-                Text(
+              child:
+                  const Flex(direction: Axis.vertical, children: <AutoSizeText>[
+                AutoSizeText(
                   'DIRECCION DEL PLANTEL',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
-                ),
-                Text(
-                  'Fernando Hernández Carrasco S/N, Santa María Yancuitlalpan, 90500 Huamantla, Tlax.',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 8),
+                  minFontSize: 4,
+                ),
+                AutoSizeText(
+                  'Fernando Hernández Carrasco S/N, Santa María Yancuitlalpan, 90500 Huamantla, Tlax.',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 6),
+                  maxLines: 1,
+                  minFontSize: 3,
                 ),
               ]),
             ),
