@@ -1,5 +1,7 @@
 name: sistema_de_incidencias
-description: "Sistema de reoportes e incidencias. Es una app que crea reportes de los alumnos que tuvieron una incidencia, haciendo llegar al padre de familia el problema en tiempo real"
+description: "Sistema de credenciales QR. Es una app que crea registra
+y administra el flujo de los alumnos para notificar a los padres de familia 
+el comportamiento de su hijo en la escuela."
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
