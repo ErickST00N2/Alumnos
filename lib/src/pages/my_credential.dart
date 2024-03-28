@@ -42,6 +42,7 @@ class _MyCredentialPageState extends State<MyCredentialPage> {
         title: const Text('Credencial Digital'),
       ),
       body: _isLoading
+      //vamos hacer cambios-....
           ? const Center(child: CircularProgressIndicator.adaptive())
           : SingleChildScrollView(
               //padding: const EdgeInsets.all(16.0),
