@@ -11,7 +11,7 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       drawer: const MenuDrawer(),
       appBar: AppBar(
-        title: const Text('Acerca de'),
+        title: const Text('Acerca de '),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
